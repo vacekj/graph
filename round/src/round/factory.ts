@@ -77,7 +77,7 @@ export function handleRoundCreated(event: RoundCreatedEvent): void {
   const payoutStrategyAddress = roundContract.payoutStrategy();
   const payoutStrategyContract = PayoutContract.bind(payoutStrategyAddress);
   let payoutStrategy = new PayoutStrategy(payoutStrategyAddress.toHex());
-
+  log.warning("payoutstrat addy {}", [payoutStrategyAddress.toHex()]);
   // set PayoutStrategy entity fields
   payoutStrategy.strategyName = "MERKLE";
   payoutStrategy.strategyAddress = new Address(32).toHex();
